@@ -10,7 +10,7 @@ Le site est un **front-end pur** (statique) et n'utilise pas de backend traditio
 
 ---
 
-Qjouter une photo ))))))))))))))))))))))))))))))))))))))
+![Aperçu du site](./static/images/preview.png)
 
 ---
 
