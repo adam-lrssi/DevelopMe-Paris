@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %} <title>A propos - DevelopMe</title>{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/apropos.css')}}">
+{% endblock%}
+
+{% block container %}
+
+<div class="container">
+    <section class="about-hero-vision">
+        <div class="hero-content">
+            <h1>L'Origine de DevelopMe : Notre vision de la Performance Web.</h1>
+            <p class="subtitle">Nous sommes nés d'un constat simple : </p>
+            <p class="constat-text">Trop d'entreprises perdent leur budget avec des sites <strong>techniquement fragile et peu performant</strong> qui ne transforme pas les visiteurs en clients.</p>
+            <p class="promesse-text">Nous avons donc fondé DevelopMe pour <strong>rétablir un nouveau standard</strong>. Notre mission est de vous offrir une plateforme qui est un véritable outil de croisasnce : <strong>rapide, propre et rentable</strong> sur le long terme.</p>
+        
+            <div class="vision-stats">
+                <div class="card-stat">
+                    <h2>+2 ans </h2>
+                    <p>Années d'expertise Full Stack</p>
+                </div>
+                <div class="card-stat">
+                    <h2>100%</h2>
+                    <p>Focus sur un code propre et performant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-philosophy">
+        <h2>Comment nous transformons votre vision en réalité.</h2>
+
+        <div class="philosophy-grid">
+            <div class="philosophy-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Un code d'excellence durable</h3>
+                <p>Nous construisons chaque plateforme avec un code épuré et des technologie modernes pour garantir une rapidité et une sécurité optimale.</p>
+            </div>
+            <div class="philosophy-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Priorité aux Résultat</h3>
+                <p>Notre objectif n'est pas seulement de livrer un site, mais de concevoir une solutoin qui génèr pllus de leads, plus de ventes et d'éfficacité pour votre PME.</p>
+            </div>
+            <div class="philosophy-card">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Transparence & Parenariat</h3>
+                <p>Zéro jargon, zéro surprise. Un suivi régulier et des rapports clairs pour que vous gardiez le contrôle complet sur l'évolution de votre projet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta-banner">
+        <h2>Prêt à démarrer un projet avec un partenaire technique de confiance ? </h2>
+        <a href="#">Demander un devis gratuit</a>
+    </section>
+</div>
+
+{% endblock %}

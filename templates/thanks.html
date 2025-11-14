@@ -1,0 +1,50 @@
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/thanks.css' )}}">
+
+<!-- favicon  -->
+<link rel="icon" href="{{ url_for('static', filename='images/favicon/favicon.ico') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon/favicon-16x16.png') }}">
+<link rel="manifest" href="{{ url_for('static', filename='images/favicon/site.webmanifest') }}">
+
+{% endblock %}
+
+{% block title %}
+<title>Merci de votre retour!</title>
+{% endblock%}
+
+
+{% block container %}
+<section class="thanks-content">
+    <i class="icon-check-circle"></i>
+
+    <h1>Merci pour votre message !</h1>
+
+    <p class="confirmation-text">
+        Votre demande a bien été envoyée. Nous avons déjà reçu votre message et l'analysons attentivement.
+    </p>
+
+    <p class="reassurance-text">
+        <strong>Nous vous garantissons un retour personnalisé sous 24 heures maximum.</strong> Vous n'aurez pas de réponse
+        automatique, mais l'analyse d'un expert technique.
+    </p>
+
+    <div class="next-steps">
+        <p>En attendant notre retour, vous pouvez :</p>
+        <div class="cta-group-thanks">
+            <button>
+                <a href="{{ url_for('portfolio') }}" class="cta-secondary">
+                    Découvrir nos Réalisations
+                </a>
+            </button>
+            <button>
+                <a href="{{ url_for('index') }}" class="cta-primary">
+                    Retourner à l'Accueil
+                </a>
+            </button>
+
+        </div>
+    </div>
+
+</section>
+{% endblock %}

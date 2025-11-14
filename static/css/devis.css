@@ -1,0 +1,411 @@
+:root {
+    --text-color: #113264;
+    --main-color: #0588F0;
+    --step-color: #ced7e0;
+    --step-size: 32px;
+    --steps: 4;
+    --progress-width: calc((var(--steps) - 1) / var(--steps) * 100%);
+}
+
+li.stepper {
+    list-style: decimal;
+}
+
+button.stepper {
+    cursor: pointer;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 16px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 0.875rem;
+    transition: 0.3s;
+}
+
+button.stepper:active,
+button.stepper:hover {
+    background-color: var(--text-color);
+}
+
+button.stepper[type="submit"] {
+    background-color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.devis-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.devis-header .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.devis-header .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #113264 0%, #0d1f3d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.devis-header .hero-content .subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* -------------------------------------------------------------------- */
+
+.container .formulaire {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    /* A retirer plus tard une fois le stepper fini*/
+    padding: 32px;
+    border-radius: 13px;
+    width: auto;
+    height: auto;
+}
+
+.container .formulaire form {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 16px rgba(167, 21, 84, 0.1);
+}
+
+.container form .progress-container ol {
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    counter-reset: step-number;
+    position: relative;
+    z-index: 3;
+}
+
+.progress-container {
+    position: relative;
+}
+
+.progress-container::before {
+    content: "";
+    height: 4px;
+    width: var(--progress-width);
+    background-color: var(--step-color);
+    position: absolute;
+    top: calc(var(--step-size) / 2);
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.progress-container .progress {
+    height: 4px;
+    width: var(--progress-width);
+    background-color: var(--main-color);
+    position: absolute;
+    top: calc(var(--step-size) / 2);
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 2;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.3s;
+}
+
+
+.progress-container li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--step-color);
+    transition: 0.3s linear 0.3s;
+    text-align: center;
+}
+
+.container form .progress-container li::before {
+    counter-increment: step-number;
+    content: counter(step-number);
+    background-color: var(--step-color);
+    width: var(--step-size);
+    height: var(--step-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    transition: 0.3s linear 0.3s;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.progress-container li:where(.done, .current) {
+    color: #333;
+    font-weight: 700;
+}
+
+.progress-container li.done::before {
+    background-color: var(--main-color) !important;
+}
+
+.progress-container li.current::before {
+    background-color: var(--main-color) !important;
+    box-shadow: 0 0 0 3px #8EC8F6;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 16px;
+    padding-inline: 8px;
+}
+
+.controls button {
+    flex: 1;
+}
+
+.step-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.step {
+    flex: 1 0 100%;
+    padding: 24px 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    height: fit-content;
+}
+
+.step.current {
+    opacity: 1;
+}
+
+.step h3 {
+    text-align: center;
+
+}
+
+/* ---------------------------------------------------------------------- */
+/* input pour le formulaire  */
+.form-group {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 45%;
+    position: relative;
+    width: 50%;
+    position: relative;
+    left: 25%;
+
+}
+
+.form-group input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: #fff;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+    
+}
+
+.form-group :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #fff;
+}
+
+.form-group :is(input:focus, input:valid) {
+    border-color: #113264;
+}
+
+
+/* Select  */
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--text-color);
+}
+
+.form-group select:hover {
+    border-color: #999;
+}
+
+.step textarea {
+    margin-top: 20px;
+    font-size: 100%;
+    padding: 1em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: #E6F4FE;
+    border-radius: 20px;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    resize: vertical;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* CheckBox */
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.checkbox-group .inputGroup {
+    position: relative;
+    margin: 0;
+}
+
+.checkbox-group .inputGroup label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    color: #333;
+    user-select: none;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-group .inputGroup label:hover {
+    background-color: #f5f5f5;
+}
+
+.checkbox-group .inputGroup input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-left: auto;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-group .inputGroup input[type="checkbox"]:hover {
+    border-color: #4CAF50;
+}
+
+.checkbox-group .inputGroup input[type="checkbox"]:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.checkbox-group .inputGroup input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-group .inputGroup input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+
+.textarea-wrapper {
+    margin-top: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.textarea-wrapper label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.textarea-wrapper textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+    line-height: 1.5;
+}
+
+.textarea-wrapper textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/devis.css')}}">
+{% endblock %}
+
+
+{% block title %}
+<title>Devis en ligne - DevelopMe</title>
+{% endblock %}
+
+{% block container %}
+<div class="container">
+    <section class="devis-header">
+        <div class="hero-content">
+            <h1>Obtenez votre Devis Précis en 4 étapes</h1>
+            <p class="subtitle">
+                Quelques minutes suffisent pour nous fournir les informations clés. Nous qualifions votre besoin pour vous garantir une analyse technique et un retour détaillé de notre expert sous 24h.
+            </p>
+        </div>
+    </section>
+
+    <div class="formulaire">
+        <form class="form" action="https://api.web3forms.com/submit" method="post">
+            <!-- Config Web3Forms -->
+            <input type="hidden" name="access_key" value="{{ web3forms_key }}">
+            <input type="hidden" name="redirect" value="{{ url_for('thanks', _external=True) }}">
+    
+            <!-- Nom dse mails - notifs  -->
+            <input type="hidden" name="from_name" value="DevelopMe - Question Générale">
+            <!-- anti spam  -->
+            <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+        <div class="progress-container">
+            <div class="progress"></div>
+    
+            <ol>
+                <li class="current">Infos Personnelles</li>
+                <li>Type de site web</li>
+                <li>Description Globale</li>
+                <li>Fonctionnalité principales</li>
+            </ol>
+        </div>
+
+        <div class="step-container">
+            <div class="step">
+                <h3>Infos Personnelles</h3>
+                <div class="form-group">
+                    <input type="text" id="name" name="Nom" autocomplete="name" required>
+                    <label for="name">Votre nom *</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="Email" autocomplete="email" required>
+                    <label for="Email">Votre E-mail *</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telephone" name="Numéro Téléphone" required="" size="15" maxlength="10" autocomplete="tel">
+                    <label for="telephone">Téléphone</label>
+                </div>
+                <div class="form-group">
+                    <select name="fonction" id="fonction">
+                        <option value="" disabled selected>Choisir un statut</option>
+                        <option value="Indépendant">Indépendant</option>
+                        <option value="Entreprise">Entreprise</option>
+                        <option value="Association">Association</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Votre demande et votre budget</h3>
+                <div class="form-group">
+                    <select name="type_site" id="type_site">
+                        <option value="" disabled>Définissez votre demande</option>
+                        <option value="Vitrine">Site Vitrine</option>
+                        <option value="Blog">Site Blog</option>
+                        <option value="Ecommerce">Site Ecommerce</option>
+                        <option value="Refonte">Refonte de site web</option>
+                        <option value="Portfolio">Site Portfolio</option>
+                        <option value="Autre">Autre Projet</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="budget" name="budget" required>
+                    <label for="budget">Budget *</label>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Description de votre Projet</h3>
+                <textarea name="Description Projet" id="DescriptionProjet" rows="5"></textarea>
+            </div>
+            <div class="step">
+                <h3>Les Fonctionnalité clés pour votre Projet</h3>
+                <div class="checkbox-group">
+                    <div class="inputGroup">
+                        <label for="paiement">Paiement en ligne</label>
+                        <input type="checkbox" name="paiement" id="paiement">
+                    </div>
+                    <div class="inputGroup">
+                        <label for="form-contact">Formulaire de Contact</label>
+                        <input type="checkbox" name="form-contact" id="form-contact">
+                    </div>
+                    <div class="inputGroup">
+                        <label for="reservation">Réservation en ligne</label>
+                        <input type="checkbox" name="réservation" id="reservation">
+                    </div>
+                    <div class="inputGroup">
+                        <label for="Admin">Page Administrateur</label>
+                        <input type="checkbox" name="Admin-page" id="Admin-page">
+                    </div>
+                    <div class="inputGroup">
+                        <label for="Galerie">Galerie d'image</label>
+                        <input type="checkbox" name="Galerie image" id="Galerieimage">
+                    </div>
+
+                </div>
+
+            
+            </div>
+        </div>
+
+        <div class="h-captcha" data-captcha="true" style="position: relative; left: 25%;"></div>
+        <div class="controls">
+            <button type="button" class="prev-btn stepper">Précédent</button>
+            <button type="button" class="next-btn stepper">Suivant</button>
+            <button type="submit" class="submit-btn stepper">Envoyer le devis</button>
+        </div>
+
+
+    </form>
+    </div>
+    
+    
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://web3forms.com/client/script.js" async defer></script>
+{% endblock %}

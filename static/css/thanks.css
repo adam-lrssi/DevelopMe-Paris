@@ -1,0 +1,286 @@
+:root {
+    --background: #E6F4FE; 
+    --text-color: #113264; 
+}
+
+/* Mode Dark */
+body.dark .thanks-content h1 {
+    background: linear-gradient(135deg, #C2E6FF 0%, #8BC5FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark .thanks-content .confirmation-text {
+    color: rgba(194, 230, 255, 0.8);
+}
+
+body.dark .thanks-content .reassurance-text {
+    background: #1a3e6b;
+    border-color: rgba(194, 230, 255, 0.3);
+}
+
+body.dark .thanks-content .next-steps > p {
+    color: rgba(194, 230, 255, 0.7);
+}
+
+body.dark .thanks-content .cta-primary {
+    border-color: rgba(194, 230, 255, 0.3);
+}
+
+body.dark .thanks-content .cta-primary:hover {
+    background: #C2E6FF;
+    color: #0D2847;
+}
+
+/* Container */
+body { 
+    background-color: var(--background);
+}
+
+.thanks-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 40px 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+/* Icône de succès */
+.thanks-content .icon-check-circle {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 40px;
+    animation: checkmark 0.6s ease;
+    box-shadow: 0 10px 40px rgba(118, 75, 162, 0.3);
+}
+
+.thanks-content .icon-check-circle::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* Animation de l'icône */
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Titre */
+.thanks-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #113264 0%, #0d1f3d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+/* Textes */
+.thanks-content .confirmation-text {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.thanks-content .reassurance-text {
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(118, 75, 162, 0.1);
+    border: 2px solid rgba(118, 75, 162, 0.2);
+}
+
+/* Next steps */
+.thanks-content .next-steps {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.thanks-content .next-steps > p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* Groupes de boutons */
+.thanks-content .cta-group-thanks {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.thanks-content .cta-group-thanks button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.thanks-content .cta-group-thanks a {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.thanks-content .cta-secondary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.3);
+}
+
+.thanks-content .cta-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(118, 75, 162, 0.5);
+}
+
+.thanks-content .cta-primary {
+    background: white;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    box-shadow: 0 8px 25px rgba(17, 50, 100, 0.1);
+}
+
+.thanks-content .cta-primary:hover {
+    transform: translateY(-3px);
+    background: var(--text-color);
+    color: white;
+    box-shadow: 0 12px 35px rgba(17, 50, 100, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .thanks-content {
+        padding: 80px 30px 60px;
+    }
+    
+    .thanks-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .thanks-content .confirmation-text {
+        font-size: 1.2rem;
+    }
+    
+    .thanks-content .reassurance-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .thanks-content {
+        padding: 60px 20px 40px;
+    }
+    
+    .thanks-content .icon-check-circle {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 30px;
+    }
+    
+    .thanks-content .icon-check-circle::before {
+        font-size: 3rem;
+    }
+    
+    .thanks-content h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .thanks-content .confirmation-text {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    
+    .thanks-content .reassurance-text {
+        font-size: 0.95rem;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .thanks-content .next-steps > p {
+        font-size: 1rem;
+    }
+    
+    .thanks-content .cta-group-thanks {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .thanks-content .cta-group-thanks a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .thanks-content {
+        padding: 50px 15px 30px;
+    }
+    
+    .thanks-content .icon-check-circle {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 25px;
+    }
+    
+    .thanks-content .icon-check-circle::before {
+        font-size: 2.5rem;
+    }
+    
+    .thanks-content h1 {
+        font-size: 1.7rem;
+    }
+    
+    .thanks-content .confirmation-text {
+        font-size: 1rem;
+    }
+    
+    .thanks-content .reassurance-text {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+    
+    .thanks-content .cta-group-thanks a {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+}

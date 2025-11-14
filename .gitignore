@@ -1,0 +1,20 @@
+# .gitignore pour un projet Flask/Python
+
+# 1. Environnement Virtuel Python
+# Ne jamais inclure le dossier du venv (où les librairies sont installées)
+venv/
+.venv/
+
+# 2. Fichiers de configuration sensibles
+# NE JAMAIS inclure les variables d'environnement (où se trouve la SECRET_KEY, etc.)
+.env
+
+# 3. Fichiers d'archive et de cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 4. Logs et sessions Flask/Werkzeug
+# Ne pas tracker les fichiers de log ou les sessions temporaires
+*.log
+.DS_Store # Fichiers Mac OS

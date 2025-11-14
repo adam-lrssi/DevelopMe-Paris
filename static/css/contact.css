@@ -1,0 +1,265 @@
+:root {
+    --text-color: #113264; 
+}
+
+/* Mode Dark */
+body.dark .form-header h1 {
+    background: linear-gradient(135deg, #C2E6FF 0%, #8BC5FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark form { 
+    background-color: #0D2847;
+    border: none;
+}
+
+body.dark .form-header .subtitle {
+    color: rgba(194, 230, 255, 0.8);
+}
+
+body.dark .form-group label {
+    color: rgba(194, 230, 255, 0.8);
+}
+
+body.dark .form-group :is(input:focus, input:valid)~label {
+    background-color: var(--background);
+    color: #C2E6FF;
+}
+
+body.dark .form-group :is(input:focus, input:valid) {
+    border-color: var(--text-color);
+}
+
+body.dark .form-group-message textarea {
+    background-color: #0D2847;
+    color: var(--text-color);
+}
+
+body.dark .form-group-message textarea:focus {
+    border-color: var(--text-color);
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+}
+
+/* Header du formulaire */
+.form-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #113264 0%, #0d1f3d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.form-header .subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.form-header .subtitle a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-header .subtitle a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Formulaire */
+form {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(17, 50, 100, 0.08);
+}
+
+/* Styles existants pour les inputs - on les garde */
+.form-group {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 45%;
+    position: relative;
+    width: 100%;
+}
+
+.form-group input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: #fff;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+    
+}
+
+.form-group :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #fff;
+}
+
+.form-group :is(input:focus, input:valid) {
+    border-color: #113264;
+}
+
+/* Style pour le textarea */
+.form-group-message {
+    margin: 2em 0 1em 0;
+    position: relative;
+}
+
+.form-group-message label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #113264;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.form-group-message textarea {
+    font-size: 100%;
+    padding: 1em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: #E6F4FE;
+    border-radius: 20px;
+    width: 100%;
+    resize: vertical;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group-message textarea:focus {
+    border-color: #113264;
+}
+
+/* Bouton de soumission */
+.cta-submit {
+    background: linear-gradient(135deg, #113264 0%, #1a4a7a 100%);
+    color: white;
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(17, 50, 100, 0.2);
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(17, 50, 100, 0.3);
+}
+
+.cta-submit:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .container {
+        padding: 60px 20px 40px;
+    }
+    
+    .form-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .form-header .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    form {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 50px 15px 30px;
+    }
+    
+    .form-header {
+        margin-bottom: 40px;
+    }
+    
+    .form-header h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .form-header .subtitle {
+        font-size: 1rem;
+    }
+    
+    form {
+        padding: 35px 25px;
+        border-radius: 25px;
+    }
+    
+    .form-group {
+        max-width: 100%;
+    }
+    
+    .cta-submit {
+        padding: 16px 40px;
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-header h1 {
+        font-size: 1.7rem;
+    }
+    
+    form {
+        padding: 30px 20px;
+    }
+    
+    .cta-submit {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+}

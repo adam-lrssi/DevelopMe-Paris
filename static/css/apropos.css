@@ -1,0 +1,420 @@
+/* Page À Propos */
+
+/* Mode Dark */
+body.dark .about-hero-vision h1 {
+    background: linear-gradient(135deg, #C2E6FF 0%, #8BC5FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark .about-hero-vision .subtitle,
+body.dark .about-hero-vision .constat-text,
+body.dark .about-hero-vision .promesse-text {
+    color: rgba(194, 230, 255, 0.8);
+}
+
+body.dark .about-hero-vision .card-stat h2 {
+    background: linear-gradient(135deg, #C2E6FF 0%, #8BC5FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark .about-hero-vision .card-stat p {
+    color: rgba(194, 230, 255, 0.7);
+}
+
+body.dark .mission-philosophy > h2 {
+    background: linear-gradient(135deg, #C2E6FF 0%, #8BC5FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark .mission-philosophy .philosophy-card h3 {
+    color: #C2E6FF;
+}
+
+body.dark .mission-philosophy .philosophy-card p {
+    color: rgba(194, 230, 255, 0.7);
+}
+
+body.dark .mission-philosophy .philosophy-card i {
+    color: #667eea;
+}
+
+body.dark .about-hero-vision .card-stat {
+    background: #1a3e6b;
+    border-color: rgba(194, 230, 255, 0.2);
+}
+
+body.dark .mission-philosophy .philosophy-card {
+    background: #1a3e6b;
+    border-color: rgba(194, 230, 255, 0.2);
+}
+
+body.dark .about-cta-banner {
+    background: linear-gradient(135deg, #0D2847 0%, #1a4a7a 100%);
+    border: 1px solid rgba(194, 230, 255, 0.2);
+}
+
+body.dark .about-cta-banner a {
+    color: #113264;
+}
+
+body.dark .about-cta-banner a:hover {
+    background: #C2E6FF;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+}
+
+/* Section Hero À Propos */
+.about-hero-vision {
+    margin-bottom: 80px;
+}
+
+.about-hero-vision .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-hero-vision h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #113264 0%, #0d1f3d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.3;
+}
+
+.about-hero-vision .subtitle {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.about-hero-vision .constat-text,
+.about-hero-vision .promesse-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.about-hero-vision .constat-text strong,
+.about-hero-vision .promesse-text strong {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+/* Cartes de statistiques */
+.about-hero-vision .vision-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.about-hero-vision .card-stat {
+    background: white;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(17, 50, 100, 0.08);
+}
+
+.about-hero-vision .card-stat:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(118, 75, 162, 0.15);
+}
+
+.about-hero-vision .card-stat h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+}
+
+.about-hero-vision .card-stat p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Section Mission et Philosophie */
+.mission-philosophy {
+    margin-bottom: 80px;
+}
+
+.mission-philosophy > h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #113264 0%, #0d1f3d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 60px;
+}
+
+.mission-philosophy .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.mission-philosophy .philosophy-card {
+    background: white;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(17, 50, 100, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-philosophy .philosophy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.mission-philosophy .philosophy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(118, 75, 162, 0.15);
+}
+
+.mission-philosophy .philosophy-card:hover::before {
+    transform: scaleX(1);
+}
+
+.mission-philosophy .philosophy-card i {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 20px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.mission-philosophy .philosophy-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.mission-philosophy .philosophy-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.mission-philosophy .philosophy-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Section CTA */
+.about-cta-banner {
+    background: linear-gradient(135deg, #113264 0%, #1a4a7a 100%);
+    padding: 60px 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(17, 50, 100, 0.2);
+    margin-bottom: 50px;
+}
+
+.about-cta-banner h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 35px;
+    line-height: 1.3;
+}
+
+.about-cta-banner a {
+    display: inline-block;
+    background: white;
+    color: var(--text-color);
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-cta-banner a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .container {
+        padding: 60px 20px 40px;
+    }
+    
+    .about-hero-vision h1 {
+        font-size: 2.5rem;
+    }
+    
+    .mission-philosophy > h2 {
+        font-size: 2.3rem;
+    }
+    
+    .about-cta-banner {
+        padding: 50px 30px;
+    }
+    
+    .about-cta-banner h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 50px 15px 30px;
+    }
+    
+    .about-hero-vision {
+        margin-bottom: 60px;
+    }
+    
+    .about-hero-vision h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .about-hero-vision .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .about-hero-vision .constat-text,
+    .about-hero-vision .promesse-text {
+        font-size: 1rem;
+    }
+    
+    .about-hero-vision .vision-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 40px;
+    }
+    
+    .about-hero-vision .card-stat {
+        padding: 30px 25px;
+    }
+    
+    .about-hero-vision .card-stat h2 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero-vision .card-stat p {
+        font-size: 1rem;
+    }
+    
+    .mission-philosophy {
+        margin-bottom: 60px;
+    }
+    
+    .mission-philosophy > h2 {
+        font-size: 1.9rem;
+        margin-bottom: 40px;
+    }
+    
+    .mission-philosophy .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .mission-philosophy .philosophy-card {
+        padding: 35px 30px;
+    }
+    
+    .mission-philosophy .philosophy-card i {
+        font-size: 2.5rem;
+    }
+    
+    .mission-philosophy .philosophy-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .about-cta-banner {
+        padding: 40px 25px;
+        border-radius: 25px;
+    }
+    
+    .about-cta-banner h2 {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+    
+    .about-cta-banner a {
+        padding: 16px 40px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero-vision h1 {
+        font-size: 1.7rem;
+    }
+    
+    .about-hero-vision .subtitle {
+        font-size: 1rem;
+    }
+    
+    .about-hero-vision .constat-text,
+    .about-hero-vision .promesse-text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .about-hero-vision .card-stat h2 {
+        font-size: 2rem;
+    }
+    
+    .mission-philosophy > h2 {
+        font-size: 1.6rem;
+    }
+    
+    .mission-philosophy .philosophy-card i {
+        font-size: 2rem;
+    }
+    
+    .mission-philosophy .philosophy-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .about-cta-banner h2 {
+        font-size: 1.5rem;
+    }
+    
+    .about-cta-banner a {
+        padding: 14px 35px;
+        font-size: 1rem;
+    }
+}
+

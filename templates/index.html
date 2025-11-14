@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>Accueil - DevelopMe</title> {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+
+{% block container %}
+<div class="container">
+    <section class="main-content">
+        <div class="left-lide">
+            <div class="text">
+                <h1>La performance web sans les frais d'agences.</h1>
+                <p class="subtitle">Obtenez un site sur mesure, optimisé pour satisafaire vos clients, sans dépasser votre budget</p>
+            </div>
+            <div class="button">
+                <button>
+                    <a href="{{ url_for('devis') }}">Faire mon devis</a>
+                </button>
+            </div>
+        </div>
+        <div class="right-side">
+            <img src="{{ url_for('static', filename='images/home-page.png') }}" alt="Illustration">
+        </div>
+    </section>
+
+    <section class="engagements">
+        <div class="title">
+            <h2>Nos Engagements</h2>
+        </div>
+        <div class="wrapper">
+            <div class="row">
+                <div class="card">
+                    <div class="title-card">
+                        <h3>Vitesse & Efficacité</h3>
+                    </div>
+                    <div class="paragraph-card">
+                        <p>Votre site doit être <strong>instantatné.</strong> Nous le construisons avec un code épuré pour une <strong>rapidité record. </strong>
+                        Résultat : <strong>meilleur exérience client, meilleur classement</strong> sur les navigateurs, et une image <strong>professionnel</strong> sans faille.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="title-card">
+                        <h3>Solution Sur Mesure</h3>
+                    </div>
+                    <div class="paragraph-card">
+                        <p>
+                            Oubliez les modèles génériques. Votre entreprise est unique, votre site doit l'être aussi. Nosu constuisons une <strong>plateforme évolutive</strong>
+                            qui s'intègre parfaitement à vos besoins et qui grandit avec votre activité. <strong>Un outil fait pour vous, </strong>pas uen solution standard que vous adaptez.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="title-card">
+                        <h3>Transparence & Suivi</h3>
+                    </div>
+                    <div class="paragraph-card">
+                        <p>
+                            Zéro surprise, zéro notion technique. Vous êtes impliqué à <strong>chaque étape,</strong> de l'equisse au lancement. Nous vous offrons un suivi claire et régulier. 
+                            <strong>Vous contrôlez le projet </strong>de A à Z, pour un résultat qui correspond parfaitement à vos attentes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="protfolio-teaser">
+        <div class="header-portfolio">
+            <h2 class="title">Nos réalisations parlent pour nous. </h2>
+            <p class="subtitle">Découvrez quelques exemples de sites développer pour nos PME et indépendants.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="projects-card">
+                <a href="https://laperle-auto.fr" data-nom="La Perle de l'Automobile" target="_blank">
+                    <img src="../static/images/projects/laperle-auto.png" alt="La perle de l'automobile - Site web ">
+                </a>
+            </div>
+            <div class="projects-card">
+                <a href="https://alyahdream.fr" data-nom="Alyah Dream" target="_blank">
+                    <img src="../static/images/projects/project2.png" alt="Alyah Dream - Site web ">
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

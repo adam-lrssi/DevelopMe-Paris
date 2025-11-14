@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Nos projets - DevelopMe </title>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css')}}">
+{% endblock %}
+
+{% block container %}
+
+<div class="container">
+    <section class="portfolio-header">
+        <h1>Nos Réalisations et Concept Technique.</h1>
+        <p class="subtitle">Découvrez le niveau d'exigence technique que nous apportons pour chacun des projets de nos clients.</p>
+    </section>
+    <section class="project">
+        <div class="projects-grid">
+            <article class="project-card featured">
+                <img src="../static/images/projects/project2.png" alt="Alyah Dream - Projet">
+                <div class="project-details">
+                    <h2>Alyah Dream - Agence de transports</h2>
+                    <p class="project-description">
+                        <ul>
+                            <li>
+                                <strong>Design Personnalisé : </strong>L'esthétique et la structure reflète à 100% la vision du client.     
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Performance Technique : </strong>Code propre pour un chargement rapide.
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Conversion Optimal : </strong>Un formulaire de contact sécurisé.
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Gestion Visuelle : </strong>Galerie d'image facile à mettre à jour par le client 
+                            </li>
+                        </ul>
+                    </p>
+                    <br>
+                    <div class="project-tags">
+                        <span>HTML / CSS</span>
+                        <span>JAVASCRIPT</span>
+                        <span>Optimisation SEO </span>
+                    </div>
+                    <a href="https://alyahdream.fr" target="_blank">
+                        Voir le site en ligne 
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                
+            </article>
+            <article class="project-card featured">
+                <img src="../static/images/projects/laperle-auto.png" alt="La perle de l'Automobile - Projet">
+                <div class="project-details">
+                    <h2>La Perle de l'Automobile - Agence d'importation de véhicules</h2>
+                    <p class="project-description">
+                        <ul>
+                            <li>
+                                <strong>Optimisation Vitesse : </strong>Réduction radical du temps de chargement pour un meilleur classement SEO.    
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Architecture Flask : </strong>Migration vers une base de code moderne pour une stabilité et une évolution maximales.
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Stratégie de Converesion : </strong>Intégration de CTA (Appel à l'Action) et formulaire spécifique.
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Modernisation Visuelle UI/UX : </strong>Design actualisé pour inspiré la confiance et le professionnalisme.
+                            </li>
+                        </ul>
+                    </p>
+                    <br>
+                    <div class="project-tags">
+                        <span>HTML / CSS</span>
+                        <span>JAVASCRIPT</span>
+                        <span>Python - Flask </span>
+                        <span>Optimisation SEO </span>
+                    </div>
+                    <a href="https://alyahdream.fr" target="_blank">
+                        Voir le site en ligne 
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                
+            </article>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
